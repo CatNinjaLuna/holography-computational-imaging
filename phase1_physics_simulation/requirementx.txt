@@ -1,5 +1,5 @@
-numpy
-matplotlib
-torch
-odak
-LightPipes
+numpy>=1.21.0
+matplotlib>=3.5.0
+torch>=2.0.0
+odak>=0.2.0
+LightPipes>=2.1.0
