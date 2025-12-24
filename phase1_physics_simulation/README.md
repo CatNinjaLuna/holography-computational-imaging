@@ -83,3 +83,62 @@ This phase serves as the **ground truth generator** for later phases.
 -  **Status**: Widely used in academic publications
 
 **Current Implementation**: This phase uses NumPy + Matplotlib for fundamental wave propagation simulation, providing a solid foundation before moving to GPU-accelerated tools.
+
+---
+
+## Installation
+
+### Prerequisites
+
+-  Python 3.11 (recommended via Homebrew on macOS)
+-  Virtual environment support
+
+### Setup Instructions
+
+1. **Install Python 3.11** (if not already installed):
+
+   ```bash
+   brew install python@3.11
+   ```
+
+2. **Create virtual environment**:
+
+   ```bash
+   # From project root
+   /opt/homebrew/opt/python@3.11/bin/python3.11 -m venv venv
+   ```
+
+3. **Activate virtual environment**:
+
+   ```bash
+   source venv/bin/activate
+   ```
+
+4. **Install required packages**:
+   ```bash
+   pip install numpy matplotlib torch odak LightPipes plotly kaleido
+   ```
+
+### Installed Packages
+
+-  **numpy** (2.2.6): Numerical computing foundation
+-  **matplotlib** (3.10.8): Visualization framework
+-  **torch** (2.9.1): PyTorch for HoloTorch backend (Metal GPU support on Apple Silicon)
+-  **odak** (0.2.6): Industry-standard CGH toolkit
+-  **LightPipes** (2.1.5): Classical Fourier optics simulation
+-  **plotly** (5.24.1): Optional interactive 3D visualizations for Odak
+-  **kaleido** (0.2.1): Optional Plotly image export
+
+### Verification
+
+Check that all packages work:
+
+```bash
+venv/bin/python -c "import numpy; import matplotlib; import torch; import odak; import LightPipes as lp; print('✓ All packages ready!')"
+```
+
+Check GPU support (Apple Silicon):
+
+```bash
+venv/bin/python -c "import torch; print(f'Metal GPU available: {torch.backends.mps.is_available()}')"
+```
