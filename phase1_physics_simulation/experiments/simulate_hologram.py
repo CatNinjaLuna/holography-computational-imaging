@@ -75,20 +75,25 @@ def simulate_with_odak(amp, phase, wavelength, z, dx, N):
         return None, None
     
     try:
-        # Create complex field
+        import torch
+        
+        # Create complex field as torch tensor
         u0 = amp * np.exp(1j * phase)
+        u0_torch = torch.from_numpy(u0).cfloat().unsqueeze(0).unsqueeze(0)  # Add batch and channel dims
         
         # Use Odak's propagation
         uz = odak.learn.wave.propagate_beam(
-            field=u0,
+            field=u0_torch,
             k=2 * np.pi / wavelength,
             distance=z,
             dx=dx,
             wavelength=wavelength
         )
         
-        holo = np.abs(uz) ** 2
-        return uz, holo
+        # Convert back to numpy
+        uz_np = uz.squeeze().cpu().numpy()
+        holo = np.abs(uz_np) ** 2
+        return uz_np, holo
     except Exception as e:
         warnings.warn(f"Odak simulation failed: {e}")
         return None, None
