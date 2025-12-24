@@ -8,6 +8,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 
 ### `gt_amplitude.png` - Object Amplitude Field
 
+![Ground Truth Amplitude](gt_amplitude.png)
+
 **Description**: Shows the amplitude distribution of the synthetic object at the object plane (z=0). The object consists of three distinct features designed to test different spatial frequencies and hologram formation characteristics.
 
 **Analysis**:
@@ -18,6 +20,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 -  **Physical interpretation**: This represents a semi-transparent object with varying transmission coefficients. The contrast ratio of 10:1 (peak:background) is typical for phase objects in digital holography.
 
 ### `gt_phase.png` - Object Phase Field
+
+![Ground Truth Phase](gt_phase.png)
 
 **Description**: Phase distribution of the object, displayed with periodic colormap showing phase wrapping from -π to +π.
 
@@ -30,11 +34,13 @@ This directory contains visualization outputs from multi-framework hologram simu
 
 ---
 
-## Hologram Intensity Patterns
-
 ### `hologram_numpy.png` - NumPy Baseline Hologram
 
+![NumPy Hologram](hologram_numpy.png)
+
 **Description**: Hologram intensity pattern generated using pure NumPy FFT-based Fresnel propagation.
+
+**Analysis**:\*\*: Hologram intensity pattern generated using pure NumPy FFT-based Fresnel propagation.
 
 **Analysis**:
 
@@ -44,6 +50,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 -  **Speckle-like pattern**: Fine-scale interference from multiple object features beating together.
 
 ### `hologram_odak.png` - Odak Framework Hologram
+
+![Odak Hologram](hologram_odak.png)
 
 **Description**: Hologram generated using Odak's industrial-grade wave propagation toolkit.
 
@@ -56,6 +64,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 
 ### `hologram_holotorch.png` - HoloTorch (PyTorch) Hologram
 
+![HoloTorch Hologram](hologram_holotorch.png)
+
 **Description**: GPU-accelerated hologram using PyTorch with Metal backend (Apple Silicon).
 
 **Analysis**:
@@ -66,6 +76,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 -  **Differentiable physics**: This framework enables learning-based approaches in Phase 3.
 
 ### `hologram_lightpipes.png` - LightPipes Classical Optics Hologram
+
+![LightPipes Hologram](hologram_lightpipes.png)
 
 **Description**: Hologram generated using LightPipes' classical Fourier optics approach.
 
@@ -82,6 +94,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 
 ### `framework_comparison.png` - Side-by-Side Hologram Comparison
 
+![Framework Comparison](framework_comparison.png)
+
 **Description**: 2×2 grid showing all four framework outputs with identical colormaps for direct visual comparison.
 
 **Analysis**:
@@ -92,6 +106,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 -  **Validation success**: Three independent implementations (NumPy, Odak, HoloTorch) agree, confirming our Fresnel propagation is implemented correctly.
 
 ### `hologram_summary_4panel.png` - Comprehensive 4-Panel Summary
+
+![4-Panel Summary](hologram_summary_4panel.png)
 
 **Description**: Consolidated view showing: (top) ground truth amplitude/phase, (bottom) selected hologram and reconstructed field amplitude.
 
@@ -107,6 +123,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 ## Detailed Analysis Visualizations
 
 ### `comprehensive_analysis.png` - 9-Panel Detailed Analysis
+
+![Comprehensive Analysis](comprehensive_analysis.png)
 
 **Description**: Comprehensive multi-panel visualization including intensity maps, cross-sections, frequency spectra, statistics, and energy conservation.
 
@@ -146,6 +164,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 
 ### `frequency_spectrum_comparison.png` - 2D FFT Framework Comparison
 
+![Frequency Spectrum Comparison](frequency_spectrum_comparison.png)
+
 **Description**: 2×2 grid showing 2D Fourier transforms (log scale) of each framework's hologram, revealing spatial frequency content.
 
 **Analysis**:
@@ -160,6 +180,12 @@ This directory contains visualization outputs from multi-framework hologram simu
 ---
 
 ## Individual Framework Field Visualizations
+
+### Field Amplitude Visualizations
+
+|                     NumPy                     |                    Odak                     |                       HoloTorch                       |                       LightPipes                        |
+| :-------------------------------------------: | :-----------------------------------------: | :---------------------------------------------------: | :-----------------------------------------------------: |
+| ![NumPy Amplitude](field_amplitude_numpy.png) | ![Odak Amplitude](field_amplitude_odak.png) | ![HoloTorch Amplitude](field_amplitude_holotorch.png) | ![LightPipes Amplitude](field_amplitude_lightpipes.png) |
 
 ### `field_amplitude_[framework].png` - Complex Field Amplitude at z=5mm
 
@@ -176,6 +202,12 @@ This directory contains visualization outputs from multi-framework hologram simu
 
 -  **NumPy/HoloTorch/Odak**: Nearly identical amplitude distributions
 -  **LightPipes**: Same pattern structure but scaled by ~√0.08 ≈ 0.28× due to normalization
+
+### Field Phase Visualizations
+
+|                 NumPy                 |                Odak                 |                   HoloTorch                   |                   LightPipes                    |
+| :-----------------------------------: | :---------------------------------: | :-------------------------------------------: | :---------------------------------------------: |
+| ![NumPy Phase](field_phase_numpy.png) | ![Odak Phase](field_phase_odak.png) | ![HoloTorch Phase](field_phase_holotorch.png) | ![LightPipes Phase](field_phase_lightpipes.png) |
 
 ### `field_phase_[framework].png` - Complex Field Phase at z=5mm
 
@@ -198,6 +230,8 @@ This directory contains visualization outputs from multi-framework hologram simu
 ## Legacy/Additional Visualizations
 
 ### `figure1_plane_wave_validation.png` - Plane Wave Propagation Test
+
+![Plane Wave Validation](figure1_plane_wave_validation.png)
 
 **Description**: Validation experiment showing uniform plane wave before and after propagation.
 
